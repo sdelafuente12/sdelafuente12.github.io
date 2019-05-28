@@ -14,10 +14,9 @@
  */
 function isArray(value) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
-    
+return Array.isArray(value);
+
+
     // YOUR CODE ABOVE HERE //
 }
 
@@ -31,7 +30,7 @@ function isArray(value) {
  */
 function isObject(value) {
     // YOUR CODE BELOW HERE //
-    
+return (Object.prototype.toString.call(value)) === '[object Object]';    
     
     
     
@@ -46,10 +45,11 @@ function isObject(value) {
  */
 function isCollection(value) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
-    
+if(isArray(value) === true || isObject(value) === true) {
+   return true; 
+} else {
+    return false;
+}
     // YOUR CODE ABOVE HERE //
 }
 
@@ -57,15 +57,15 @@ function isCollection(value) {
  * Given an input value, return the type of the value as a String
  * 
  * Types are one of: 
- *    - "string"
- *    - "array"
- *    - "object"
- *    - "undefined"
- *    - "number"
- *    - "boolean"
- *    - "null"
- *    - "function"
- *    - "date"
+ *    - "string" > typeOf()
+ *    - "array" > Array.isArray()
+ *    - "object" > Object.prototype.toString.call(value)
+ *    - "undefined" > typeOf()
+ *    - "number" > typeOf()
+ *    - "boolean" > typeOf()
+ *    - "null" > Object.prototype.toString.call(value)
+ *    - "function" >  type()
+ *    - "date" > Object.prototype.toString.call(value)
  * 
  * Examples:
  *    typeOf(134) -> "number"
@@ -74,10 +74,25 @@ function isCollection(value) {
  */ 
 function typeOf(value) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
-    
+if (typeof(value) === 'string') {
+    return "string";
+} else if (Array.isArray(value)) {
+    return "array";
+} else if (Object.prototype.toString.call(value) === '[object Object]') {
+    return "object";
+} else if (typeof(value) === 'undefined') {
+    return 'undefined';
+} else if (typeof(value) === 'number') {
+    return 'number';
+} else if (typeof(value) === 'boolean') {
+    return 'boolean';
+}  else if (Object.prototype.toString.call(value) === '[object Null]') {
+    return 'null';
+} else if (typeof(value) === 'function') {
+    return 'function';
+} else if (Object.prototype.toString.call(value) === '[object Date]') {
+    return 'date';
+}
     // YOUR CODE ABOVE HERE //
 }
 

@@ -12,7 +12,9 @@
  */
 function printArrayValues(array) {
   // YOUR CODE BELOW HERE //
-  
+  for (var i = 0; i < array.length; i++) {
+    console.log(array[i]);
+  }
   
   
   
@@ -25,7 +27,9 @@ function printArrayValues(array) {
  */
 function printArrayValuesInReverse(array) {
   // YOUR CODE BELOW HERE //
-  
+   for (var i = array.length - 1; i > -1; i--) {
+    console.log(array[i]);
+  } 
   
   
   
@@ -37,8 +41,7 @@ function printArrayValuesInReverse(array) {
  */
 function getObjectKeys(object) {
   // YOUR CODE BELOW HERE //
-  
-  
+ return (Object.keys(object));
   
   
   // YOUR CODE ABOVE HERE //
@@ -50,7 +53,9 @@ function getObjectKeys(object) {
  */
 function printObjectKeys(object) {
   // YOUR CODE BELOW HERE //
-  
+for (var key in object) {
+  console.log(key);
+};
   
   
   
@@ -62,7 +67,7 @@ function printObjectKeys(object) {
  */
 function getObjectValues(object) {
   // YOUR CODE BELOW HERE //
-  
+return Object.values(object);
   
   
   
@@ -75,9 +80,9 @@ function getObjectValues(object) {
  */
 function printObjectValues(object) {
   // YOUR CODE BELOW HERE //
-  
-  
-  
+ for(var key in object) {
+   console.log(object[key]);
+ }
   
   // YOUR CODE ABOVE HERE //
 }
@@ -87,9 +92,8 @@ function printObjectValues(object) {
  */
 function getObjectLength(object) {
   // YOUR CODE BELOW HERE //
-  
-  
-  
+return(Object.keys(object).length);
+
   
   // YOUR CODE ABOVE HERE //
 }
@@ -99,12 +103,35 @@ function getObjectLength(object) {
  * print its values using console.log()?
  */
 function printObjectValuesInReverse(object) {
+  var values = Object.values(object).reverse();
+for (var i = 0; i < values.length; i++) {
+  console.log(values[i]);
+}
+  
+  
+  
+  
+  // console.log(Object.values(object).reverse());
+
   // YOUR CODE BELOW HERE //
+  //create an array 
+  //loop over object to obtain values 
+  //push all values to the array 
+  //reverse array values 
+  //console.log all values 
+  //? not sure if values need to be outside of an array ?
   
-  
-  
-  
-  // YOUR CODE ABOVE HERE //
+// var array = [];
+// for(var key in object) {
+//   array.unshift(object[key]);
+//   // var newArray = array.reverse();
+//   // // for (var i = -1; i < array.length - 1; i++) 
+//   //   console.log(newArray);
+//   console.log(array)
+ 
+
+// }
+//YOUR CODE ABOVE HERE 
 }
 
 

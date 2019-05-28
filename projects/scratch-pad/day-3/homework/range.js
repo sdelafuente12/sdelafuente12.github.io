@@ -23,7 +23,29 @@
  */
 function range(start, end) {
     // YOUR CODE GOES BELOW HERE //
-    
+    var array = [];
+ if (start < end) {
+for (var i = start; i <= end; i++){
+    array.push(i); 
+} 
+} else if (start > end) {
+for (var i = end; i <= start; i++){
+  array.unshift(i);
+}
+}
+return array;
+
+// function range(start, end) {
+//   var array = []
+// while (start <= end) {
+//   array.push(i) 
+// }
+
+
+
+//in the range function we need to create an empty array to store all the numbers in the range, then we need to create a loop that will return
+//all the numbers in range from small to large if the start number is smaller than the end number, else the numbers should
+//push onto the array in reverse with the start number first and the numbers getting smaller. 
     
     
     

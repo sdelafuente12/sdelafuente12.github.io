@@ -37,7 +37,11 @@
 
 // YOUR CODE GOES BELOW HERE //
 function makeContact(id, nameFirst, nameLast) {
-
+let newContact = {};
+newContact.id = id;
+newContact.nameFirst = nameFirst;
+newContact.nameLast = nameLast;
+return newContact;
 } 
 
 
@@ -45,20 +49,78 @@ function makeContactList() {
     /*
      * You need something here to hold contacts. See length api for a hint:
      */
-    var contacts;
-    
+    var contacts = [];
     return {
         // we implemented the length api for you //
         length: function() {
             return contacts.length;
-        }
+    },
+        addContact: function(contact) {
+            contacts.push(contact);    
+    },
+    findContact: function(fullName){
+        for (let i = 0; i < contacts.length; i++){
+            let firstName = contacts[i].nameFirst;
+            let lastName = contacts[i].nameLast;
+            let user = firstName + ' ' + lastName;
+            if(fullName === user) {
+                return contacts[i];
+            }
+         return undefined;
+        } 
+    
+          //iterate through our contacts array
+            //check if the given full name  === the full name in a contact
+            //a contact has an id, a firstname, and a lastname
+            //fullName = first & last name
+            //if the first and last name match the full name, return the objet
+            //if there are no contacts in the list, that match the fullName, return undefined
+        },
+        removeContact: function(contact){
+            for (let i = 0; i < contacts.length; i++){
+                let firstName = contacts[i].nameFirst;
+                let lastName = contacts[i].nameLast;
+                let user = firstName + ' ' + lastName;
+                if(user === contact.nameFirst + ' ' + contact.nameLast) {
+                    var matchCon = contacts.splice(contact[i], 1);
+                    return matchCon; 
+                }
+              
+            }
+            //input contact is object
+            //output the contact array without the contact in the list
+            //edgecase how can we remove one element from an array
+            //find matching contact, remove matching contact
+            //if there is no matching contact, do nothing
+        },
+        printAllContactNames: function(){
+            let contactArray = [];
+            for ( let i = 0; i < contacts.length; i++){
+                let firstName = contacts[i].nameFirst;
+                let lastName = contacts[i].nameLast;
+                let username = firstName + ' ' + lastName;
+                contactArray.push(username);
+            } return contactArray.join('\n');
+        }};
+            //input nothing
+            //output a string of our contact's full names, separated by a new line break /n
+            //constraints the last full name should have not new lines added after it
+            //edgecase e need newline characters
+            
+            //iterate over all contacts in the array
+            //print the first and last names
+            //separate each fullname with a newline character
+            //we do not want to have a new line character after the last full name
+        
     }
-}
+
 
 
 
 
 // YOUR CODE GOES ABOVE HERE //
+
+
 
 
 

@@ -13,8 +13,18 @@
  */
 function createGreaterThanFilter(base) {
     // YOUR CODE BELOW HERE //
-    
-    
+return function(value){
+    return base < value;
+}
+
+
+
+
+
+// var value = ''
+// if (base < value) {
+//     return true
+// }
     
     
     // YOUR CODE ABOVE HERE //
@@ -28,7 +38,10 @@ function createGreaterThanFilter(base) {
 function createLessThanFilter(base) {
     // YOUR CODE BELOW HERE //
     
-    
+  return function(value){
+    return base > value;
+}
+  
     
     
     // YOUR CODE ABOVE HERE //
@@ -41,9 +54,12 @@ function createLessThanFilter(base) {
  */
 function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
+
+    return function(String){
+    var newStartsWith = startsWith.toLowerCase()
+    var newString = String.toLowerCase()
+    return newStartsWith === newString[0]; 
+    };
     
     // YOUR CODE ABOVE HERE //
 }
@@ -55,7 +71,11 @@ function createStartsWithFilter(startsWith) {
  */
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
-    
+    return function(String){
+    var newEndsWith = endsWith.toLowerCase();
+    var newString = String.toLowerCase();
+    return newEndsWith === newString[newString.length - 1]; 
+    }; 
     
     
     
@@ -71,9 +91,15 @@ function createEndsWithFilter(endsWith) {
  */
 function modifyStrings(strings, modify) {
     // YOUR CODE BELOW HERE //
+let resultArray = [];
     
+for(let i = 0; i < strings.length; i++) {
+    console.log(strings[i])
+    console.log(modify(strings[i]))
+    resultArray.push(modify(strings[i]))
+}    
     
-    
+return resultArray; 
     
     // YOUR CODE ABOVE HERE //
 }
@@ -89,8 +115,28 @@ function modifyStrings(strings, modify) {
  */
 function allStringsPass(strings, test) {
     // YOUR CODE BELOW HERE //
+for(let i = 0; i < strings.length; i++) {
+    let sampleString = strings[i];
+    if (test(sampleString) === false) {
+        return false; 
+    } 
+} return true
     
+// for(let i = 0; i < strings.length; i++) {
+//     console.log(test[i])
+//     console.log(test(strings[i]))
+//     resultArray.push(test(strings[i]))
+
+
+
+
+// let resultArray = [];
     
+// for(let i = 0; i < strings.length; i++) {
+//     console.log(strings[i])
+//     console.log(test(strings[i]))
+//     resultArray.push(test(strings[i]))
+// }      
     
     
     // YOUR CODE ABOVE HERE //
