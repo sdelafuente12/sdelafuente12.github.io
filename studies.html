@@ -77,6 +77,38 @@
             .sidebar img {
                 width: 200px;
             }
+            .code {
+               font-family: monospace;
+               background: #ccffcc;
+               border: 1px solid #ccffcc;
+               color: #000;
+               white-space: pre;
+               width: 100%;
+               margin-bottom: 20px;
+               overflow-x: hidden;
+            }
+            
+            .topic-heading {
+               padding-left: 50px;
+               text-transform: capitalize;
+            }
+            
+            .line {
+               display: flex;
+               padding: 2px 0;
+               background: #ffffcc;
+            }
+            
+            .line:nth-child(even) {
+               background:#ffff99;
+            }
+
+            .line-number {
+               min-width: 40px;
+               padding-left: 5px;
+               text-align: right;
+               padding-right: 20px;
+            }
             .content {
                 flex: 1;
                 padding: 15px;

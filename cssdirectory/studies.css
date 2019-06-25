@@ -23,7 +23,7 @@ nav {
 nav header {
     display: flex;
     align-items: center;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     flex: 1;
 }
 nav ul {
@@ -40,7 +40,7 @@ nav a {
 
 /* main container area beneath menu */
 main {
-    background: rgb(245, 238, 219);
+    background: rgb(130, 58, 20);
     display: flex;
     padding:inherit;
 }
